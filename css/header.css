@@ -1,0 +1,99 @@
+/*------------header-css-------------*/
+
+.header{
+    background: var(--white100);
+    padding: 1rem 0;
+}
+.header .dropdown-menu{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: var(--white100);
+    border: 1px solid var(--white200);
+    min-width: 20rem;
+    padding: 1.6rem 1rem;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9;
+}
+.header .dropdown-menu li:not(:last-child){
+    margin-bottom: 1.6rem;
+}
+.header .dropdown:hover .dropdown-menu{
+    opacity: 1;
+    visibility: visible;
+}
+.header .dropdown span{
+    position: relative;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    font-weight: 500;
+    color: var(--blue100);
+    padding-right: 1.5rem;
+}
+.header .dropdown span::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-left: 2px solid var(--blue100);
+    border-right: transparent;
+    border-top: 2px solid var(--blue100);
+    position: absolute;
+    bottom: -12px;
+    right: 0;
+    transform: rotate(-135deg);
+    top: 10px;
+}
+.header .dropdown:hover span::before{
+    transform: rotate(45deg);
+    top: 15px;
+}
+
+.search-form-header input{
+    background: var(--white200);
+    border: 1.2px solid var(--white300);
+    padding: 1.2rem 1.5rem 1.2rem 4rem;
+    font-family: var(--font-TTCommons);
+    font-size: 1.7rem;
+    line-height: 2.32rem;
+}
+.search-form-header button{
+    position: absolute;
+    left: 1.5rem;
+    top: 1.8rem;
+    background: transparent;
+    border: none;
+}
+
+.notifications-header{
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: var(--white200);
+    border: 1px solid var(--white300);
+    border-radius: 100%;
+}
+.notification-count{
+    position: absolute;
+    top: -8px;
+    right: -5px;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 100%;
+    color: var(--white);
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+    background: var(--blue900);
+}
+
+@media screen and (max-width:767px){
+    .header .row{
+        flex-wrap: nowrap;
+    }
+    .search-form-header {
+        max-width: 16rem;
+    }
+    .header .dropdown span{
+        font-size: 1.2rem;
+    }
+}
